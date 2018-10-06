@@ -1,0 +1,72 @@
+<!--
+  Generated template for the PersonaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>persona</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form class="centrar" no-lines [formGroup]="formularioPersona" (ngSubmit)="crearPersona()">
+    <ion-list>
+      <ion-item >       
+        <ion-label floating><ion-icon name="card" color="primary"></ion-icon>    DPI</ion-label>
+        <ion-input formControlName="dpi" type="text" value="" ></ion-input>
+      </ion-item>
+      <ion-item no-lines *ngIf="!formularioPersona.controls.dpi.valid  && (formularioPersona.controls.dpi.dirty)">
+        <p style="color:red;">Por favor ingrese un dpi valido</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating><ion-icon name="lock" color="primary" item-start></ion-icon>   Padrón</ion-label>
+        <ion-input formControlName="padron" type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item no-lines *ngIf="!formularioPersona.controls.padron.valid  && (formularioPersona.controls.padron.dirty)">
+        <p style="color:red;">Por favor ingrese padrón válida</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating><ion-icon name="calendar" color="primary" item-start></ion-icon>   Fecha</ion-label>
+        <ion-datetime formControlName="fechaNacimiento" displayFormat="YYYY-MM-DD" value="2000-01-01"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating><ion-icon name="person" color="primary" item-start></ion-icon>   Nombre</ion-label>
+        <ion-input formControlName="nombre" type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item no-lines *ngIf="!formularioPersona.controls.nombre.valid  && (formularioPersona.controls.nombre.dirty)">
+        <p style="color:red;">Por favor ingrese un nombre válido</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating><ion-icon name="person" color="primary" item-start></ion-icon>   Apellido</ion-label>
+        <ion-input formControlName="apellido" type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item no-lines *ngIf="!formularioPersona.controls.apellido.valid  && (formularioPersona.controls.apellido.dirty)">
+        <p style="color:red;">Por favor ingrese un apellido válido</p>
+      </ion-item>
+
+      <button ion-item>
+        <ion-label color="primary">Genero:</ion-label>
+        <ion-select formControlName="genero" color="primary">
+            <ion-option value="1" >Masculino</ion-option>
+            <ion-option value="0" >Femenino</ion-option>
+        </ion-select>
+    </button>
+
+      <ion-item>
+        <p *ngIf="estado">No existe el dpi</p>
+        <button ion-button color="primary" [disabled]="formularioPersona.invalid" large block>Crear</button>
+      </ion-item>
+    </ion-list>
+  </form>
+
+</ion-content>

@@ -1,5 +1,11 @@
 {
   "name": "Elecciones",
   "integrations": {},
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/recursos",
+      "proxyUrl": "http://192.168.43.154:8081/grupo3"
+    }
+  ]
 }

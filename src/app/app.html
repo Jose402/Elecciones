@@ -1,1 +1,29 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<!--ion-nav [root]="rootPage"></ion-nav-->
+<ion-menu [content]="content" >
+    <ion-header>
+      <ion-toolbar color="dark">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list >
+        <button ion-item   menuClose="left" (click)="crearPersona()">
+            <ion-label color="primary" >Crear Persona</ion-label>
+        </button>
+        <button ion-item   menuClose="left">
+            <ion-label color="primary" >Crear Mesa</ion-label>
+        </button>
+        <button ion-item  menuClose="left">
+            <ion-label color="primary" >Crear Departamento</ion-label>
+        </button>
+        <button ion-item  menuClose="left">
+            <ion-label color="primary" >Crear Municipio</ion-label>
+        </button>
+        <button ion-item  menuClose="left" (click)="logout()">
+            <ion-label color="danger" >Cerrar Sesión</ion-label>
+        </button>
+      </ion-list>
+    </ion-content>
+</ion-menu>
+  
+  <ion-nav #content [root]="rootPage"></ion-nav>

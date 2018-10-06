@@ -1,0 +1,36 @@
+<!--
+  Generated template for the MesaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle icon-only>
+        <ion-icon name='menu'></ion-icon>
+      </button>
+    <ion-title>
+      Buscar Mesa
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>DPI</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="dpi"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <button ion-button full large (click)="presentLoading()">
+        <ion-icon name="search">   Buscar</ion-icon>
+      </button>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
